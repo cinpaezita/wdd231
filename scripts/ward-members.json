@@ -1,0 +1,18 @@
+{
+    "family_name": "Gamarra",
+    "move_date": "2021-07-13",
+    "number_people": 2,
+    "visited_bishopric": true,
+    "family_members": [
+        {
+        "name": "Cinthia Paez",
+        "gender": "Female",
+        "birthdate": "1995-11-17"
+        },
+        {
+        "name": "Fidel Gamarra",
+        "gender": "Male",
+        "birthdate": "1994-09-20"
+        }
+    ]
+}
