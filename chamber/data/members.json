@@ -1,0 +1,66 @@
+[
+    {
+      "name": "RiederTech Solutions",
+      "address": "1098 Peru Ave",
+      "phone": "021 219 0277",
+      "website": "https://techsolutions.rieder.com.py",
+      "image": "riedertech.png",
+      "membershipLevel": "3=gold",
+      "description": "Leading provider of innovative tech solutions."
+    },
+    {
+      "name": "ViaPlan",
+      "address": "Ruta 6°-Km 214,5",
+      "phone": "0983 798 979",
+      "website": "https://www.viaplan.com.py/",
+      "image": "viaplan-logo.webp",
+      "membershipLevel": "2=silver",
+      "description": "Experts in construction and building materials."
+    },
+    {
+      "name": "Asismed",
+      "address": "1215 Diego de Silva St.",
+      "phone": "021 288 7000",
+      "website": "https://www.asismed.com.py/",
+      "image": "asismed-logo.webp",
+      "membershipLevel": "1=member",
+      "description": "Your trusted partner in healthcare services."
+    },
+    {
+      "name": "Cadiem",
+      "address": "4926 Quesada St.",
+      "phone": "021 610 720",
+      "website": "https://cadiem.com.py",
+      "image": "cadiem-logo.webp",
+      "membershipLevel": "3=gold",
+      "description": "Comprehensive financial planning and advice."
+    },
+    {
+      "name": "Capta Energy",
+      "address": "213 6 de Enero St.",
+      "phone": "0982 588 099",
+      "website": "https://www.captaenergy.com",
+      "image": "captaenergy-logo.webp",
+      "membershipLevel": "2=silver",
+      "description": "Sustainable energy solutions for the future."
+    },
+    {
+      "name": "Royal Viajes",
+      "address": "3100 Aviadores del Chaco St.",
+      "phone": "0981 229 629",
+      "website": "https://www.royalviajes.com.py/",
+      "image": "royal-logo.png",
+      "membershipLevel": "1=member",
+      "description": "Making travel easy and affordable for everyone."
+    },
+    {
+      "name": "WebParaguay",
+      "address": "Mariano Roque Alonso St.",
+      "phone": "0985 922 070",
+      "website": "https://webparaguay.com",
+      "image": "webparaguay-logo.webp",
+      "membershipLevel": "3=gold",
+      "description": "Pioneering next-gen software development."
+    }
+  ]
+  

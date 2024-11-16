@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambare Chamber of Commerce | Paraguay</title>
+    <meta name="description" content="Welcome to the Lambare Chamber of Commerce. We provide a list of local business and other organizations that belong to the chamber of commerce">
+    <meta name="author" content="Cinthia Paez">
+    <meta property="og:title" content="Lambare Chamber of Commerce | Paraguay">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cinpaezita.github.io/wdd231/images/paraguay.png">
+    <meta property="og:url" content="https://cinpaezita.github.io/wdd231/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/chamber-large.css">
+    <script src="scripts/chamber.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="profile">
+            <img src="images/lambare-logo.webp" alt="Lambare Chamber of Commerce Isologo"
+            loading="lazy" width="80" height="80">
+            <div>
+                <h1>Lambare</h1>
+                <p>Chamber of Commerce</p>
+            </div>
+            
+        </div>
+        <button id="menu" type="button" aria-label="Toggle navigation menu"></button>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#" class="active">Directory</a>
+            <a href="#">Join</a>
+            <a href="#">Discover</a>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <picture>
+                <source srcset="images/hero-large.webp" media="(min-width: 1000px)">
+                <source srcset="images/hero-medium.webp" media="(min-width: 500px)">
+                <img src="images/hero-small.webp" alt="Lambare city - Top View" width="500" height="250" loading="lazy">
+            </picture>
+            <a href="join.html" target="_blank" class="hero-button">Join Us</a>
+        </div>
+        <h2>Home</h2>
+        <div class="content">
+            <section class="column">
+                <div>
+                    <h2>Events</h2>
+                    <ul>
+                        <li>Monday 6:00pm: Jack preside on the Allegory of the Olive Tree</li><br>
+                        <li>Tuesday 10:00am: Coronation of King Noah</li><br>
+                        <li>Wednesaday 5pm: Archery Contest for youth ages 16-18</li><br>
+                    </ul>
+                </div>
+            </section> 
+            <section class="column">
+                <div>
+                    <h2>Current Weather</h2>
+                    <div class="weather">
+                        <div>
+                            <img src="images/weather-icon.svg" alt="weather icon" width="80" height="80" loading="lazy">
+                        </div>
+                        <div>
+                            <div>
+                                <span id="current-temperature">Loading...</span>
+                            </div>
+                            <div>
+                                <span id="current-conditions">Loading...</span>
+                            </div>
+                            <div>
+                                <span>High:</span>
+                                <span id="high-temp"></span>
+                            </div>
+                            <div>
+                                <span>Low:</span>
+                                <span id="low-temp">Loading...</span>
+                            </div>
+                            <div>
+                                <span>Humidity:</span>
+                                <span id="humidity">Loading...</span>
+                            </div>
+                            <div>
+                                <span>Sunrise:</span>
+                                <span id="sunrise">Loading...</span>
+                            </div>
+                            <div>
+                                <span>Sunset:</span>
+                                <span id="sunset">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="column">
+                <div>
+                    <h2>Weather Forecast</h2>
+                    <div class="forecast">
+                        <div>
+                            <span>Today:</span>
+                            <span id="today-forecast">Loading...</span>
+                        </div>
+                        <div>
+                            <span>Wednesday:</span>
+                            <span id="wednesday-forecast">Loading...</span>
+                        </div>
+                        <div>
+                            <span>Thursday:</span>
+                            <span id="thursday-forecast">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </div> 
+        <h1>Member Directory</h1>
+        <div class="menu">
+            <button id="grid">⏹️Grid</button>
+            <button id="list">📄List</button>
+        </div>
+        <hr>
+        <article class="grid"></article> 
+    </main>
+    <footer>
+        <div class="content-footer">
+            <section >
+                <p><strong>Lambare Chamber of Commerce</strong></p>
+                <p>1040 Cacique Lambare Ave</p>
+                <p>Lambare, Central</p>
+                <p>info@lambarecc.org</p>
+                <p>(021) 905 197</p>
+            </section>
+            <section >
+                <nav class="sociallinks">
+                    <a href="https://www.youtube.com/" target="_blank"> <img src="images/youtube.svg" alt="YouTube"
+                            loading="lazy" width="30" height=30>
+                    </a>
+                    <a href="https://www.twitter.com/" target="_blank"> <img src="images/x.svg" alt="Twitter" loading="lazy"
+                            width="30" height=30>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank"> <img src="images/linkedin.svg" alt="LinkedIn"
+                            loading="lazy" width="30" height=30>
+                    </a>
+                </nav>
+            </section> 
+            <section>
+                <p>WDD231 Class Project</p>
+                <p>Cinthia Paez</p>
+                <p>&copy; <span id="currentyear"></span> Lambare Chamber of Commerce</p>
+                <p id="lastModified"></p>
+            </section>    
+        </div>
+        
+    </footer>
+</body>
+</html>
