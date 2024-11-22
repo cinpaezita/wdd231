@@ -49,7 +49,7 @@ async function displayCurrentWeather() {
       const desc = data.weather[0].description;
       weatherIcon.setAttribute('src', iconsrc);
       weatherIcon.setAttribute('alt', desc);
-      captionDesc.textContent = desc;
+      captionDesc.textContent = `${desc}`;
     }
   }
 }
