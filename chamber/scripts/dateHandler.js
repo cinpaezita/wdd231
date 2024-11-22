@@ -1,3 +1,4 @@
+// dateHandler.js
 export function setupDateHandler() {
     const currentYearElement = document.getElementById("currentyear");
     const lastModifiedElement = document.getElementById("lastModified");

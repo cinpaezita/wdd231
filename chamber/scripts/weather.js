@@ -1,55 +1,85 @@
-const apiKey = '642205110a867916ffc989e3880b05b0';
-const city = 'Lambare,py';
-const units = 'imperial';
+// weather.js
+const currentTemp = document.querySelector('#current-temperature');
+const weatherIcon = document.querySelector('#weather-icon');
+const captionDesc = document.querySelector('#current-conditions');
+const highTemp = document.querySelector('#high-temp');
+const lowTemp = document.querySelector('#low-temp');
+const humidity = document.querySelector('#humidity');
+const sunriseElem = document.querySelector('#sunrise');
+const sunsetElem = document.querySelector('#sunset');
+const todayForecast = document.querySelector('#today-forecast');
+const tomorrowForecast = document.querySelector('#tomorrow-forecast');
+const dayAfterTomorrowForecast = document.querySelector('#day-after-tomorrow-forecast');
 
-const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`;
+const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=-25.342493615788438&lon=-57.62515931089137&units=imperial&appid=642205110a867916ffc989e3880b05b0`;
+const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=-25.342493615788438&lon=-57.62515931089137&units=imperial&appid=642205110a867916ffc989e3880b05b0`;
 
+// API
 async function fetchWeatherData(url) {
-  const response = await fetch(url);
-  if (!response.ok) throw new Error("Failed to fetch weather data");
-  return response.json();
+  try {
+    const response = await fetch(url);
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data); // Tests
+      return data; // Data return
+    } else {
+      throw Error(await response.text());
+    }
+  } catch (error) {
+    console.error('Error to get data:', error);
+  }
 }
 
-export async function setupWeather() {
-  try {
-    const weatherData = await fetchWeatherData(weatherUrl);
-    const forecastData = await fetchWeatherData(forecastUrl);
+// Current weather
+async function displayCurrentWeather() {
+  // Verify if elements exits in the DOM
+  if (currentTemp && weatherIcon && captionDesc && highTemp && lowTemp && humidity && sunriseElem && sunsetElem) {
+    const data = await fetchWeatherData(currentWeatherUrl);
 
-    const currentTemp = document.querySelector('#current-temperature');
-    const currentConditions = document.querySelector('#current-conditions');
-    const highTemp = document.querySelector('#high-temp');
-    const lowTemp = document.querySelector('#low-temp');
-    const humidity = document.querySelector('#humidity');
-    const sunrise = document.querySelector('#sunrise');
-    const sunset = document.querySelector('#sunset');
+    if (data) {
+      currentTemp.innerHTML = `${data.main.temp.toFixed(1)}&deg;F`;
+      highTemp.textContent = `${data.main.temp_max.toFixed(1)}°F`;
+      lowTemp.textContent = `${data.main.temp_min.toFixed(1)}°F`;
+      humidity.textContent = `${data.main.humidity}%`;
+      sunriseElem.textContent = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+      sunsetElem.textContent = new Date(data.sys.sunset * 1000).toLocaleTimeString();
 
-    currentTemp.textContent = `${weatherData.main.temp.toFixed(1)}°F`;
-    currentConditions.textContent = weatherData.weather[0].description;
-    highTemp.textContent = `${weatherData.main.temp_max.toFixed(1)}°F`;
-    lowTemp.textContent = `${weatherData.main.temp_min.toFixed(1)}°F`;
-    humidity.textContent = `${weatherData.main.humidity}%`;
-    sunrise.textContent = new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString();
-    sunset.textContent = new Date(weatherData.sys.sunset * 1000).toLocaleTimeString();
-
-    const weatherIcon = document.querySelector('#weather-icon');
-    if (weatherData.weather[0].icon) {
-      weatherIcon.src = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
-      weatherIcon.alt = weatherData.weather[0].description;
-    } else {
-      weatherIcon.src = 'images/placeholder-image.svg'; 
-      weatherIcon.alt = 'Weather icon not available';
+      // Icon and description
+      const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      const desc = data.weather[0].description;
+      weatherIcon.setAttribute('src', iconsrc);
+      weatherIcon.setAttribute('alt', desc);
+      captionDesc.textContent = desc;
     }
-
-    const options = { weekday: 'long' };
-    const todayForecast = document.querySelector('#today-forecast');
-    const tomorrowForecast = document.querySelector('#tomorrow-forecast');
-    const dayAfterTomorrowForecast = document.querySelector('#day-after-tomorrow-forecast');
-
-    todayForecast.textContent = `${new Date(forecastData.list[0].dt * 1000).toLocaleDateString('en-US', options)}: ${forecastData.list[0].main.temp.toFixed(1)}°F`;
-    tomorrowForecast.textContent = `${new Date(forecastData.list[8].dt * 1000).toLocaleDateString('en-US', options)}: ${forecastData.list[8].main.temp.toFixed(1)}°F`;
-    dayAfterTomorrowForecast.textContent = `${new Date(forecastData.list[16].dt * 1000).toLocaleDateString('en-US', options)}: ${forecastData.list[16].main.temp.toFixed(1)}°F`;
-  } catch (error) {
-    console.error("Error fetching weather data:", error);
   }
+}
+
+// Forecast
+async function displayForecast() {
+  if (todayForecast && tomorrowForecast && dayAfterTomorrowForecast) {
+    const data = await fetchWeatherData(forecastUrl);
+
+    if (data) {
+      const today = data.list[0];
+      const tomorrow = data.list[8];
+      const dayAfterTomorrow = data.list[16];
+
+      // Get the name of the day
+      function getDayName(index) {
+        const date = new Date(data.list[index].dt * 1000);
+        const options = { weekday: 'long' };  // fullname day
+        return date.toLocaleDateString('en-US', options);
+      }
+
+      todayForecast.textContent = `Today: ${today.main.temp.toFixed(1)}°F (${getDayName(0)})`;
+      tomorrowForecast.textContent = `${getDayName(8)}: ${tomorrow.main.temp.toFixed(1)}°F`;
+      dayAfterTomorrowForecast.textContent = `${getDayName(16)}: ${dayAfterTomorrow.main.temp.toFixed(1)}°F`;
+    }
+  }
+}
+
+
+export async function setupWeather() {
+  await displayCurrentWeather();
+  await displayForecast();
 }
