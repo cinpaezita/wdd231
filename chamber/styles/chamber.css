@@ -296,3 +296,43 @@ footer section {
 .sociallinks img {
     filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
 }
+
+#spotlight-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  
+  .spotlight-card {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 1rem;
+    box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 1px;
+    line-height: 1.5rem;
+  }
+  
+  .spotlight-card img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .spotlight-card h3 {
+    margin-top: 0.5rem;
+  }
+  
+  .spotlight-card a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+  }
+  
+  .spotlight-card a:hover {
+    text-decoration: underline;
+  }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/chamber.css">
     <link rel="stylesheet" href="styles/chamber-large.css">
-    <script src="scripts/chamber.js" defer></script>
+    <script type="module" src="scripts/chamber.js"></script>
 </head>
 
 <body>
@@ -31,98 +31,17 @@
             <div>
                 <h1>Lambare</h1>
                 <p>Chamber of Commerce</p>
-            </div>
-            
+            </div>    
         </div>
         <button id="menu" type="button" aria-label="Toggle navigation menu"></button>
         <nav class="navigation">
-            <a href="#">Home</a>
-            <a href="#" class="active">Directory</a>
+            <a href="index.html">Home</a>
+            <a href="directory.html" class="active">Directory</a>
             <a href="#">Join</a>
             <a href="#">Discover</a>
         </nav>
     </header>
     <main>
-        <div class="hero">
-            <picture>
-                <source srcset="images/hero-large.webp" media="(min-width: 1000px)">
-                <source srcset="images/hero-medium.webp" media="(min-width: 500px)">
-                <img src="images/hero-small.webp" alt="Lambare city - Top View" width="500" height="250" loading="lazy">
-            </picture>
-            <a href="join.html" target="_blank" class="hero-button">Join Us</a>
-        </div>
-        <h2>Home</h2>
-        <div class="content">
-            <section class="column">
-                <div>
-                    <h2>Events</h2>
-                    <ul>
-                        <li>Monday 6:00pm: Jack preside on the Allegory of the Olive Tree</li>
-                        <li>Tuesday 10:00am: Coronation of King Noah</li>
-                        <li>Wednesaday 5pm: Archery Contest for youth ages 16-18</li>
-                    </ul>
-                </div>
-            </section> 
-            <section class="column">
-                <div>
-                    <h2>Current Weather</h2>
-                    <div class="weather">
-                        <div>
-                            <img src="images/weather-icon.svg" alt="weather icon" width="80" height="80" loading="lazy">
-                        </div>
-                        <div>
-                            <div>
-                                <span id="current-temperature">Loading...</span>
-                            </div>
-                            <div>
-                                <span id="current-conditions">Loading...</span>
-                            </div>
-                            <div>
-                                <span>High:</span>
-                                <span id="high-temp"></span>
-                            </div>
-                            <div>
-                                <span>Low:</span>
-                                <span id="low-temp">Loading...</span>
-                            </div>
-                            <div>
-                                <span>Humidity:</span>
-                                <span id="humidity">Loading...</span>
-                            </div>
-                            <div>
-                                <span>Sunrise:</span>
-                                <span id="sunrise">Loading...</span>
-                            </div>
-                            <div>
-                                <span>Sunset:</span>
-                                <span id="sunset">Loading...</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="column">
-                <div>
-                    <h2>Weather Forecast</h2>
-                    <div class="forecast">
-                        <div>
-                            <span>Today:</span>
-                            <span id="today-forecast">Loading...</span>
-                        </div>
-                        <div>
-                            <span>Wednesday:</span>
-                            <span id="wednesday-forecast">Loading...</span>
-                        </div>
-                        <div>
-                            <span>Thursday:</span>
-                            <span id="thursday-forecast">Loading...</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-        </div> 
         <div class="menu">
             <button id="grid">⏹️Grid</button>
             <button id="list">📄List</button>
@@ -159,7 +78,6 @@
                 <p id="lastModified"></p>
             </section>    
         </div>
-        
     </footer>
 </body>
 </html>

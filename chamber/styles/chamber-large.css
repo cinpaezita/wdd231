@@ -82,4 +82,9 @@
         width: 100%;
     }
 
+    .spotlight-container {
+        display: flex;
+      }
+
+
 }
