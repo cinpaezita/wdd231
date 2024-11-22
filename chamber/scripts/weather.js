@@ -37,7 +37,7 @@ export async function setupWeather() {
       weatherIcon.src = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
       weatherIcon.alt = weatherData.weather[0].description;
     } else {
-      weatherIcon.src = 'placeholder-image.png'; 
+      weatherIcon.src = 'placeholder-image.svg'; 
       weatherIcon.alt = 'Weather icon not available';
     }
 
