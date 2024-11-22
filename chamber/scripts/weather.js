@@ -33,8 +33,13 @@ export async function setupWeather() {
     sunset.textContent = new Date(weatherData.sys.sunset * 1000).toLocaleTimeString();
 
     const weatherIcon = document.querySelector('#weather-icon');
-    weatherIcon.src = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
-    weatherIcon.alt = weatherData.weather[0].description;
+    if (weatherData.weather[0].icon) {
+      weatherIcon.src = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
+      weatherIcon.alt = weatherData.weather[0].description;
+    } else {
+      weatherIcon.src = 'placeholder-image.png'; 
+      weatherIcon.alt = 'Weather icon not available';
+    }
 
     const options = { weekday: 'long' };
     const todayForecast = document.querySelector('#today-forecast');
