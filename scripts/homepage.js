@@ -2,18 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Set current year and last modified date
   document.getElementById('currentyear').textContent = new Date().getFullYear();
   document.getElementById('lastModified').textContent = "Last modified: " + document.lastModified;
-    
+
   const hamButton = document.querySelector('#menu');
   const navigation = document.querySelector('.navigation');
 
   hamButton.addEventListener('click', () => {
-      navigation.classList.toggle('open');
-      hamButton.classList.toggle('open');
+    navigation.classList.toggle('open');
+    hamButton.classList.toggle('open');
   });
-});
 
-    // Course data
-const courses = [
+  const courses = [
     {
       subject: 'CSE',
       number: 110,
@@ -75,53 +73,71 @@ const courses = [
       completed: false
     }
   ];
-  
-  // Function to display courses dynamically based on filter
+
   function displayCourses(filter = "all") {
     const courseContainer = document.getElementById('courseCards');
     const courseList = document.getElementById('courseList');
     courseContainer.innerHTML = '';
     courseList.innerHTML = '';
-  
+
     let totalCredits = 0;
-  
-    const filteredCourses = courses.filter(course => {
-      return filter === "all" || course.subject === filter;
-    });
-  
+
+    const filteredCourses = courses.filter(course => filter === "all" || course.subject === filter);
+
     filteredCourses.forEach(course => {
       // Create course card
       const courseCard = document.createElement('div');
       courseCard.classList.add('course-btn');
-      if (course.completed) {
-        courseCard.classList.add('completed');
-      }
-      courseCard.innerHTML = `
-        <h3>${course.subject} ${course.number}</h3>
-      `;
+      if (course.completed) courseCard.classList.add('completed');
+      courseCard.innerHTML = `<h3>${course.subject} ${course.number}</h3>`;
+      
+      // Event listener for clicking on the course card
+      courseCard.addEventListener('click', () => {
+        displayCourseDetails(course);  // Calls the function to display course details
+      });
+    
+      // Append the course card to the container
       courseContainer.appendChild(courseCard);
-  
-      // Create list item
+    
+      // Create list item for the course in the course list
       const listItem = document.createElement('li');
       listItem.innerHTML = `${course.subject} ${course.number} - ${course.title} <span class="credits">${course.credits} credits</span>`;
       courseList.appendChild(listItem);
-  
+    
       totalCredits += course.credits;
     });
-  
+    
+
     // Append total credits
     const totalListItem = document.createElement('li');
     totalListItem.innerHTML = `Total Credits: <span>${totalCredits} credits</span>`;
     courseList.appendChild(totalListItem);
   }
 
-  // Filter buttons
+  function displayCourseDetails(course) {
+    const courseDetails = document.getElementById('courseDetails');
+  
+    courseDetails.innerHTML = `
+      <button id="closeModal">❌</button>
+      <h2>${course.subject} ${course.number}</h2>
+      <h3>${course.title}</h3>
+      <p><strong>Credits:</strong> ${course.credits}</p>
+      <p><strong>Certificate:</strong> ${course.certificate}</p>
+      <p>${course.description}</p>
+      <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
+    `;
+  
+    courseDetails.showModal();
+  
+    const closeModal = document.getElementById("closeModal");
+    closeModal.addEventListener("click", () => {
+      courseDetails.close();
+    });
+  }
+
   document.getElementById('allCourses').addEventListener('click', () => displayCourses("all"));
   document.getElementById('cseCourses').addEventListener('click', () => displayCourses("CSE"));
   document.getElementById('wddCourses').addEventListener('click', () => displayCourses("WDD"));
 
-  // Display
   displayCourses();
-  
-
-
+});
