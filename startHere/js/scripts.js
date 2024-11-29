@@ -19,9 +19,7 @@ let formData = everything[1].split('&');
 // console.log(formData);
 
 function show(cup) {
-    // console.log(cup);
     formData.forEach((element) => {
-        // console.log(element)
         if (element.startsWith(cup)) {
             //console.log("Found a Match");
             result = element.split('=')[1].replace("%40", "@");;
