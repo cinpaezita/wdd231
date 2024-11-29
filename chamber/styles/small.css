@@ -18,65 +18,77 @@ h3 {
   text-align: center;
   padding: 0 1rem;
 }
-form {
-    margin: 1rem 2%;
-    justify-items: center;
-  
-    label {
-      display: block;
-      font-size: .8rem;
-      color: #330977;
-      padding-top: .2rem;
-      width: 85%;
-    }
-    h3 {
-      font-size: .9rem;
-      color: #E07A5F;
-      margin: 1.5rem 0 .2rem 0;
-      border-bottom: 1px solid #eee;
-    }
-  
-    input[type=text],
-    input[type=tel],
-    input[type=date],
-    input[type=email],
-    select {
-      display: block;
-      margin: .1rem 0 1rem 0 ;
-      padding: .3rem;
-      border: 1px solid #999;
-      border-radius: 4px;
-      border-left-width: 5px;
-      border-left-color:#555;
-      font-size: 1rem;
-      color: #3D405B;
-      width: 100%;
-    }
-  
-    input:required {border-left-color: #ff0173;}
-    input:focus {border-left-color: black; outline:none;}
-    input:required:valid{border-left-color: rgb(5, 197, 5);}
-  
-    input[type=submit] {
-      border: none;
-      text-align: center;
-      background-color: #480CA8;
-      color: white;
-      border-radius: 1rem;
-      padding: .75rem 1.5rem;
-      margin: 2rem 0;
-      font-size: 1.2rem;
-      -webkit-appearance: none;
-      appearance: none;
-    }
 
-    input[type='submit']:hover {
-      background-color: #2b0864;
-  }
-  }
-  input:-webkit-autofill{
-    -webkit-text-fill-color: #3D405B;
-  }
+form {
+  margin: 1rem 2%;
+  justify-items: center;
+}
+
+form label {
+  display: block;
+  font-size: .8rem;
+  color: #330977;
+  padding-top: .2rem;
+  width: 85%;
+}
+
+form h3 {
+  font-size: .9rem;
+  color: #E07A5F;
+  margin: 1.5rem 0 .2rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+form input[type=text],
+form input[type=tel],
+form input[type=date],
+form input[type=email],
+form select {
+  display: block;
+  margin: .1rem 0 1rem 0;
+  padding: .3rem;
+  border: 1px solid #999;
+  border-radius: 4px;
+  border-left-width: 5px;
+  border-left-color: #555;
+  font-size: 1rem;
+  color: #3D405B;
+  width: 100%;
+}
+
+form input:required {
+  border-left-color: #ff0173;
+}
+
+form input:focus {
+  border-left-color: black;
+  outline: none;
+}
+
+form input:required:valid {
+  border-left-color: rgb(5, 197, 5);
+}
+
+form input[type=submit] {
+  border: none;
+  text-align: center;
+  background-color: #480CA8;
+  color: white;
+  border-radius: 1rem;
+  padding: .75rem 1.5rem;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+form input[type='submit']:hover {
+  background-color: #2b0864;
+}
+
+input:-webkit-autofill{
+  -webkit-text-fill-color: #3D405B;
+}
 
 #results {
   background-color: #F4F1DE;
@@ -85,8 +97,6 @@ form {
   border-radius: 6px;
   line-height: 1.5;
 }
-
-
 
 .container {
   display: flex;
@@ -163,7 +173,7 @@ dialog p {
 }
 
 ::backdrop {
-  background-color: rgb (0 0 0 / 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 dialog button {
@@ -171,7 +181,7 @@ dialog button {
   top: 1rem;
   right: 1rem;
   padding: 0.5rem 0.5rem;
-  border: 1px solid rg(0 0 0 / 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .modal-trigger {
