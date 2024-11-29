@@ -1,0 +1,46 @@
+[
+    {
+        "id": "np",
+        "title": "Non-Profit Membership",
+        "subtitle": "Benefits include:",
+        "benefits": [
+            "You'll get a nice plaque with the mayor's stamp on it",
+            "You get to ride on a float Saints Patty's Day"
+        ],
+        "cost": "Free"
+    },
+    {
+        "id": "bronze",
+        "title": "Bronze Membership",
+        "subtitle": "Benefits include:",
+        "benefits": [
+            "Special event access",
+            "Monthly newsletters",
+            "Bronze spotlight position on the home page"
+        ],
+        "cost": "$100/year"
+    },
+    {
+        "id": "silver",
+        "title": "Silver Membership",
+        "subtitle": "Benefits include:",
+        "benefits": [
+            "Access to exclusive training sessions",
+            "Priority customer support",
+            "Silver spotlight position on the home page"
+        ],
+        "cost": "$200/year"
+    },
+    {
+        "id": "gold",
+        "title": "Gold Membership",
+        "subtitle": "Benefits include:",
+        "benefits": [
+            "All Silver benefits",
+            "Event discounts",
+            "Gold spotlight position on the home page",
+            "Special annual gala invitation"
+        ],
+        "cost": "$500/year"
+    }
+]

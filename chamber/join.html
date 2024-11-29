@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambare Chamber of Commerce | Paraguay</title>
+    <meta name="description" content="This page contains information about the benefit of joining the chamber and a membership application form. There are four membership level options of non-profit, bronze, silver, and gold. The different levels have different perks.">
+    <meta name="author" content="Cinthia Paez">
+    <meta property="og:title" content="Lambare Chamber of Commerce | Paraguay">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cinpaezita.github.io/wdd231/chamber/images/paraguay.png">
+    <meta property="og:url" content="https://cinpaezita.github.io/wdd231/chamber/directory.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/chamber-large.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script type="module" src="scripts/chamber.js"></script>
+    <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+  <header>
+      <div class="profile">
+          <img src="images/lambare-logo.webp" alt="Lambare Chamber of Commerce Isologo"
+          loading="lazy" width="80" height="80">
+          <div>
+              <h1>Lambare</h1>
+              <p>Chamber of Commerce</p>
+          </div>    
+      </div>
+      <button id="menu" type="button" aria-label="Toggle navigation menu"></button>
+      <nav class="navigation">
+          <a href="index.html">Home</a>
+          <a href="directory.html">Directory</a>
+          <a href="join.html"  class="active">Join</a>
+          <a href="#">Discover</a>
+      </nav>
+  </header>
+
+
+  <main class="container">
+    <!-- Form Section -->
+    <section class="form-section">
+      <h2>Membership Application Form</h2>
+      <form method="GET" action="thankyou.html">
+        <label>First Name<input type="text" name="first" required autocomplete="given-name" title="Your First Name"></label>
+        <label>Last Name<input type="text" name="last" required autocomplete="family-name" title="Your Last Name"></label>
+        <label>Organizational Title <input type="text" name="organization-title" autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}" title="Minimum 7 characters, letters, hyphens, and spaces only"></label>
+        <label>Email<input type="email" name="email" required placeholder="loremp1ps44@gmail.com" title="Your Email" autocomplete="email"></label>
+        <label>Mobile Phone<input type="tel" name="phone" required autocomplete="tel" title="A Phone Number with dashes" placeholder="987-555-1234"></label>
+        <label>Business/Organization Name<input type="text" name="organization" required title="Your Organization Name" autocomplete="organization"></label>
+        
+        <label>Membership Level
+          <select name="membership" required>
+            <option value="NP">Non-Profit</option>
+            <option value="Bronze">Bronze</option>
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+          </select>
+        </label>
+
+        <label>Business/Organization Description
+          <textarea name="description" title="Describe your organization" rows="4"></textarea>
+        </label>
+
+        <!-- Timestamp -->
+        <input type="hidden" id="timestamp" name="timestamp">
+
+        <input type="submit" value="Apply for Membership">
+      </form>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="membership-section">
+      <h2>Membership Levels</h2>
+      <div class="membership-cards">
+        <!-- Cards generated dynamically -->
+      </div>
+    </section>
+    <!-- Modals-->
+    <dialog id="courseDetails">
+      <button id="closeModal">X</button>
+      <div id="modals-container"></div>
+    </dialog>
+  </main>
+
+  <footer>
+    <div class="content-footer">
+        <section >
+            <p><strong>Lambare Chamber of Commerce</strong></p>
+            <p>1040 Cacique Lambare Ave</p>
+            <p>Lambare, Central</p>
+            <p>info@lambarecc.org</p>
+            <p>(021) 905 197</p>
+        </section>
+        <section >
+            <nav class="sociallinks">
+                <a href="https://www.youtube.com/" target="_blank"> <img src="images/youtube.svg" alt="YouTube"
+                        loading="lazy" width="30" height=30>
+                </a>
+                <a href="https://www.twitter.com/" target="_blank"> <img src="images/x.svg" alt="Twitter" loading="lazy"
+                        width="30" height=30>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank"> <img src="images/linkedin.svg" alt="LinkedIn"
+                        loading="lazy" width="30" height=30>
+                </a>
+            </nav>
+        </section> 
+        <section>
+            <p>WDD231 Class Project</p>
+            <p>Cinthia Paez</p>
+            <p>&copy; <span id="currentyear"></span> Lambare Chamber of Commerce</p>
+            <p id="lastModified"></p>
+        </section>    
+    </div>
+  </footer>
+</body>
+</html>

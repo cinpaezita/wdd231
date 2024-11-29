@@ -1,0 +1,9 @@
+@media only screen and (min-width: 38rem) {
+    .form-section {
+        flex: 1 1 50%;
+    }
+    
+    .membership-section {
+        flex: 1 1 50%;
+    }
+} /*end media query*/

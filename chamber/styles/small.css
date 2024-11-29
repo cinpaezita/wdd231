@@ -1,0 +1,190 @@
+/* Base styles */
+*{box-sizing: border-box;}
+html {
+  -webkit-text-size-adjust: 100%; 
+  -ms-text-size-adjust: 100%;
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+h3 {
+  font-size: 0.8rem;
+  font-style: italic;
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  padding: 0 1rem;
+}
+form {
+    margin: 1rem 2%;
+    justify-items: center;
+  
+    label {
+      display: block;
+      font-size: .8rem;
+      color: #330977;
+      padding-top: .2rem;
+      width: 85%;
+    }
+    h3 {
+      font-size: .9rem;
+      color: #E07A5F;
+      margin: 1.5rem 0 .2rem 0;
+      border-bottom: 1px solid #eee;
+    }
+  
+    input[type=text],
+    input[type=tel],
+    input[type=date],
+    input[type=email],
+    select {
+      display: block;
+      margin: .1rem 0 1rem 0 ;
+      padding: .3rem;
+      border: 1px solid #999;
+      border-radius: 4px;
+      border-left-width: 5px;
+      border-left-color:#555;
+      font-size: 1rem;
+      color: #3D405B;
+      width: 100%;
+    }
+  
+    input:required {border-left-color: #ff0173;}
+    input:focus {border-left-color: black; outline:none;}
+    input:required:valid{border-left-color: rgb(5, 197, 5);}
+  
+    input[type=submit] {
+      border: none;
+      text-align: center;
+      background-color: #480CA8;
+      color: white;
+      border-radius: 1rem;
+      padding: .75rem 1.5rem;
+      margin: 2rem 0;
+      font-size: 1.2rem;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    input[type='submit']:hover {
+      background-color: #2b0864;
+  }
+  }
+  input:-webkit-autofill{
+    -webkit-text-fill-color: #3D405B;
+  }
+
+#results {
+  background-color: #F4F1DE;
+  padding: 0 1rem;
+  border: 1px solid #E07A5F;
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+  
+/*Form section */
+.form-section {
+  flex: 1 1 100%;
+  padding: 0.2rem;
+}
+
+/* Membership section */
+.membership-section {
+   flex: 1 1 100%;
+
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.membership-card {
+  opacity: 0; /* Invisble starting */
+  transform: translateY(50px);
+  animation: slide-up 0.8s ease-in-out forwards;
+  animation-delay: var(--delay, 0s); /* Delay for each card */
+  border: 1px solid #330977;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #faeeff;
+}
+
+dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #2b0864;
+  border-radius: .25rem;
+  padding: 1rem 1rem 1rem 2rem;
+  background-color: #F4F1DE;
+  box-shadow: 0 0 1rem #353535; width: 80%;
+
+
+}
+dialog h3 {
+  border-bottom: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: .25rem;
+  padding-bottom: 0.5rem;
+  text-align: left;
+}
+dialog h4 {
+  padding: 0.5rem 0;
+}
+
+dialog p {
+  padding-top: 0.5rem;
+}
+
+::backdrop {
+  background-color: rgb (0 0 0 / 0.9);
+}
+
+dialog button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid rg(0 0 0 / 0.1);
+}
+
+.modal-trigger {
+  margin-top: 1rem;
+  padding: 0.3rem;
+}
+
+#results {
+  background-color: #F4F1DE;
+  padding: 1rem;
+  border: 1px solid #E07A5F;
+  border-radius: 6px;
+  margin: 0.5rem;
+}
+
+

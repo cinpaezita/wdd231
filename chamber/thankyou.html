@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lambare Chamber of Commerce | Paraguay</title>
-    <meta name="description" content="Welcome to the Lambare Chamber of Commerce. We provide a list of local business and other organizations that belong to the chamber of commerce">
+    <meta name="description" content="This page displays the form information entered by the user for all required fields on the form.>
     <meta name="author" content="Cinthia Paez">
     <meta property="og:title" content="Lambare Chamber of Commerce | Paraguay">
     <meta property="og:type" content="website">
@@ -20,7 +20,10 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/chamber.css">
     <link rel="stylesheet" href="styles/chamber-large.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
     <script type="module" src="scripts/chamber.js"></script>
+    <script src="scripts/join.js" defer></script>
 </head>
 
 <body>
@@ -36,21 +39,18 @@
         <button id="menu" type="button" aria-label="Toggle navigation menu"></button>
         <nav class="navigation">
             <a href="index.html">Home</a>
-            <a href="directory.html" class="active">Directory</a>
-            <a href="join.html">Join</a>
+            <a href="directory.html">Directory</a>
+            <a href="join.html" class="active">Join</a>
             <a href="#">Discover</a>
         </nav>
     </header>
+
     <main>
-        <section>
-            <div class="menu">
-                <button id="grid">⏹️Grid</button>
-                <button id="list">📄List</button>
-            </div>
-            <hr>
-            <article class="grid"></article> 
-        </section>   
+        <h2>Thanks</h2>
+        <h3>We appreciate your interest in joining the chamber of commerce. Here are details of your application.</h3>
+        <div id="results"></div>
     </main>
+    
     <footer>
         <div class="content-footer">
             <section >
