@@ -44,6 +44,7 @@ h4 {
     background-color: var(--accent2-color);
     padding: 1rem 0.5rem;
 }
+
 p {
     margin: 0;
 }
@@ -101,28 +102,9 @@ li {
     line-height: 2rem;
 }
 
-.primary {
-    text-decoration: underline 3px var(--primary-color);
-}
-
-.secondary {
-    text-decoration: underline 3px var(--secondary-color);
-}
-
-.accent1 {
-    text-decoration: underline 3px var(--accent1-color);
-}
-
-.accent2 {
-    text-decoration: underline 3px var(--accent2-color);
-}
-
-.accent3 {
-    text-decoration: underline 3px var(--accent3-color);
-}
 .title {
     font-family: var(--heading-font);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 footer {
     display: flex;
