@@ -102,23 +102,23 @@ li {
 }
 
 .primary {
-    text-decoration: underline 5px var(--primary-color);
+    text-decoration: underline 3px var(--primary-color);
 }
 
 .secondary {
-    text-decoration: underline 5px var(--secondary-color);
+    text-decoration: underline 3px var(--secondary-color);
 }
 
 .accent1 {
-    text-decoration: underline 5px var(--accent1-color);
+    text-decoration: underline 3px var(--accent1-color);
 }
 
 .accent2 {
-    text-decoration: underline 5px var(--accent2-color);
+    text-decoration: underline 3px var(--accent2-color);
 }
 
 .accent3 {
-    text-decoration: underline 5px var(--accent3-color);
+    text-decoration: underline 3px var(--accent3-color);
 }
 .title {
     font-family: var(--heading-font);
