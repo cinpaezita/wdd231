@@ -28,14 +28,14 @@ function setupLazyLoading() {
 
     const images = [
         { 
-            desktop: {src: 'images/lambare-river.webp', width: 800, height: 400}, 
-            mobile: {src: 'images/lambare-river-small.webp', width: 500, height: 250}, 
+            desktop: { src: 'images/lambare-river.webp', width: 800, height: 400 }, 
+            mobile: { src: 'images/lambare-river-small.webp', width: 500, height: 250 }, 
             alt: 'Buildings on the river bank', 
             title: 'Lambare River' 
         },
         { 
-            desktop: {src: 'images/boat-ride.webp', width: 800, height: 400}, 
-            mobile: {src: 'images/boat-ride-small.webp', width: 500, height: 250}, 
+            desktop: { src: 'images/boat-ride.webp', width: 800, height: 400 }, 
+            mobile: { src: 'images/boat-ride-small.webp', width: 500, height: 250 }, 
             alt: 'People around the boats on the river bank', 
             title: 'Boat Ride' 
         },
@@ -46,20 +46,20 @@ function setupLazyLoading() {
             title: 'City Dusk' 
         },
         { 
-            desktop: {src: 'images/lapacho-tree.webp', width: 800, height: 400},
-            mobile: {src: 'images/lapacho-tree-small.webp', width: 500, height: 250},
+            desktop: { src: 'images/lapacho-tree.webp', width: 800, height: 400 },
+            mobile: { src: 'images/lapacho-tree-small.webp', width: 500, height: 250 },
             alt: 'Streets covered with flowering lapachos', 
             title: 'Flowered Lapacho Tree' 
         },
         { 
-            desktop: {src: 'images/lambare-hill.webp', width: 800, height: 400},
-            mobile: {src: 'images/lambare-hill-small.webp', width: 500, height: 250}, 
+            desktop: { src: 'images/lambare-hill.webp', width: 800, height: 400 },
+            mobile: { src: 'images/lambare-hill-small.webp', width: 500, height: 250 }, 
             alt: 'View of the city from Lambare Hill', 
             title: 'Top Down City View' 
         },
         { 
-            desktop: {src: 'images/costanera.webp', width: 800, height: 400},
-            mobile: {src: 'images/costanera-small.webp', width: 500, height: 250},
+            desktop: { src: 'images/costanera.webp', width: 800, height: 400 },
+            mobile: { src: 'images/costanera-small.webp', width: 500, height: 250 },
             alt: 'People walking on waterfront', 
             title: 'Walks on the Waterfront' 
         },
@@ -107,4 +107,3 @@ function setupLazyLoading() {
     const imagesToLoad = document.querySelectorAll('.gallery-grid img.lazy-image');
     imagesToLoad.forEach(img => observer.observe(img));
 }
-
