@@ -30,13 +30,13 @@ function setupLazyLoading() {
         { 
             desktop: {src: 'images/lambare-river.webp', width: 800, height: 400}, 
             mobile: {src: 'images/lambare-river-small.webp', width: 500, height: 250}, 
-            alt: 'Lambare River', 
+            alt: 'Buildings on the river bank', 
             title: 'Lambare River' 
         },
         { 
             desktop: {src: 'images/boat-ride.webp', width: 800, height: 400}, 
             mobile: {src: 'images/boat-ride-small.webp', width: 500, height: 250}, 
-            alt: 'Boat Ride', 
+            alt: 'People around the boats on the river bank', 
             title: 'Boat Ride' 
         },
         { 
