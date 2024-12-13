@@ -14,7 +14,7 @@ function displayProducts(products, productContainer, productDetails, showProduct
 
         const imgElement = document.createElement("img");
         imgElement.src = product.image;
-        imgElement.alt = product.name;
+        imgElement.alt = product.description;
         imgElement.width = 300;
         imgElement.height = 200;
 
@@ -37,7 +37,7 @@ function displayProducts(products, productContainer, productDetails, showProduct
 
 // Function to display product details
 function showProductDetails(product, productContainer, productDetails) {
-    productContainer.innerHTML = ""; // Limpiar contenedor principal
+    productContainer.innerHTML = ""; // Clear container
     productDetails.className = "product-details active";
     productDetails.innerHTML = `
         <img src="${product.detailImage}" alt="${product.name}" loading="lazy" width="500" height="300">
