@@ -1,4 +1,4 @@
-// members.js
+
 async function fetchMembers() {
     const response = await fetch('./data/members.json');
     if (!response.ok) throw new Error("Failed to fetch members data");
@@ -8,7 +8,7 @@ async function fetchMembers() {
   function createGridView(member) {
     return `
       <div class="member-card">
-        <img src="./images/${member.image}" alt="${member.name}" width="150" height="150">
+        <img src="./i// members.jsmages/${member.image}" alt="${member.name}" width="150" height="150">
         <p>${member.address}</p>
         <p>${member.phone}</p>
         <p><a href="${member.website}" target="_blank">${member.website}</a></p>
