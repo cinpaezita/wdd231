@@ -75,6 +75,7 @@ export const renderCookies = (cookies) => {
     const closeModal = () => modal.close();
     modal.querySelector('#close-modal').addEventListener('click', closeModal);
 
+
     // Submit event for order form
     orderForm.addEventListener('submit', (e) => {
         e.preventDefault();
