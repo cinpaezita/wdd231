@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (orderDetails) {
             summaryContainer.innerHTML = `
                 <h2>Customer Info:</h2>
-                <p>Name: ${orderDetails.customer.name} ${orderDetails.customer.lastname}</p>
+                <p>Name: ${orderDetails.customer.first} ${orderDetails.customer.last}</p>
                 <p>Phone: ${orderDetails.customer.phone || 'N/A'}</p>
                 <p>Email: ${orderDetails.customer.email || 'N/A'}</p>
                 <p>Address: ${orderDetails.customer.address || 'N/A'}</p>
@@ -123,4 +123,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
         
     }
+
 });

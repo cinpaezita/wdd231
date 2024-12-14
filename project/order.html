@@ -37,8 +37,19 @@
         </nav>
     </header>
     <main>
-        <h1>Cookie Order Form</h1>
+        <h1>Start an Order</h1>
         <div id="cookies-container" class="cookie-item"></div>
+
+        <form method="GET" action="order-summary.html">
+            <h2>Cookie Order Form</h2>
+            <label>First Name<input type="text" name="first" required autocomplete="given-name" title="Your First Name"></label>
+            <label>Last Name<input type="text" name="last" required autocomplete="family-name" title="Your Last Name"></label>
+            <label>Email<input type="email" name="email" required placeholder="loremp1ps44@gmail.com" title="Your Email" autocomplete="email"></label>
+            <label>Mobile Phone<input type="tel" name="phone" required autocomplete="tel" title="Enter a valid phone number with 10 to 15 digits only" placeholder="987-555-1234" pattern="\d{10,15}"></label>
+            <label for="customer-address">Address:</label>
+            <textarea id="customer-address" required></textarea>
+            <button type="submit" id="submit-order-btn">Submit Order</button>
+        </form>
 
         <dialog id="feedback-modal">
             <button id="close-modal">X</button>

@@ -31,9 +31,11 @@ export const renderCookies = (cookies) => {
         `;
         container.appendChild(cookieDiv);
 
-        // Add event listener to update the order summary
-        const quantityInput = cookieDiv.querySelector(`#quantity-${cookie.id}`);
-        quantityInput.addEventListener('input', () => updateOrderSummary(cookies));
+        // Add event listener to update order summary on quantity change
+        const quantityInput = document.getElementById(`quantity-${cookie.id}`);
+        quantityInput.addEventListener('input', () => {
+            updateOrderSummary(cookies);
+        });
     });
 
     // Dynamic order summary section
@@ -42,26 +44,10 @@ export const renderCookies = (cookies) => {
     container.appendChild(summaryDiv);
     updateOrderSummary(cookies); // Initial summary update
 
-    // Customer details form
-    const orderForm = document.createElement('form');
-    orderForm.className = 'order-form';
-    orderForm.innerHTML = `
-        <h2>Customer Details</h2>
-        <label for="customer-name">First Name:</label>
-        <input type="text" id="customer-name" required>
-        <label for="customer-lastname">Last Name:</label>
-        <input type="text" id="customer-lastname" required>
-        <label for="customer-phone">Phone:</label>
-        <input type="tel" id="customer-phone" required>
-        <label for="customer-email">Email:</label>
-        <input type="email" id="customer-email" required>
-        <label for="customer-address">Address:</label>
-        <textarea id="customer-address" required></textarea>
-        <button type="submit" id="submit-order-btn">Submit Order</button>
-    `;
-    container.appendChild(orderForm);
+    // Submit event for order form
+    const orderForm = document.querySelector('form');
 
-    // Modal for feedback messages
+    // Create feedback modal
     const modal = document.createElement('dialog');
     modal.id = 'feedback-modal';
     modal.innerHTML = `
@@ -75,20 +61,22 @@ export const renderCookies = (cookies) => {
     const closeModal = () => modal.close();
     modal.querySelector('#close-modal').addEventListener('click', closeModal);
 
-
-    // Submit event for order form
     orderForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        if (!validateForm(cookies)) {
-            modal.showModal(); // Use showModal to open the dialog
+        const isValid = validateForm(cookies);
+        const messageElement = document.getElementById('modal-message');
+
+        if (!isValid) {
+            messageElement.textContent = 'Please select at least one product to order.';
+            modal.showModal();
         } else {
-            const message = document.getElementById('modal-message');
-            message.textContent = 'Your order has been submitted successfully!';
-            modal.showModal(); 
+            messageElement.textContent = 'Your order has been submitted successfully!';
+            modal.showModal();
 
             setTimeout(() => {
                 closeModal();
                 generateOrderDetails(cookies);
+                orderForm.reset(); // Reset the form after submission
             }, 2000);
         }
     });
@@ -117,49 +105,22 @@ export const updateOrderSummary = (cookies) => {
 
 // Validate the form input
 export const validateForm = (cookies) => {
-    const modalMessage = document.getElementById('modal-message');
-
-    const customerDetails = {
-        phone: document.getElementById('customer-phone').value.trim(),
-        email: document.getElementById('customer-email').value.trim(),
-    };
-
-    const phoneRegex = /^[0-9]{10,15}$/; // Numbers only, between 10-15 digits
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email format
-
-    // Validate phone number
-    if (!phoneRegex.test(customerDetails.phone)) {
-        modalMessage.textContent = 'Please enter a valid phone number (10-15 digits).';
-        return false;
-    }
-
-    // Validate email
-    if (!emailRegex.test(customerDetails.email)) {
-        modalMessage.textContent = 'Please enter a valid email address.';
-        return false;
-    }
-
     // Validate at least one product selected
     const hasSelectedProducts = cookies.some(cookie => {
         const quantity = parseInt(document.getElementById(`quantity-${cookie.id}`).value, 10);
         return quantity > 0;
     });
 
-    if (!hasSelectedProducts) {
-        modalMessage.textContent = 'Please select at least one product to order.';
-        return false;
-    }
-
-    return true;
+    return hasSelectedProducts;
 };
 
 // Generate order details and save to localStorage
 export const generateOrderDetails = (cookies) => {
     const customerDetails = {
-        name: document.getElementById('customer-name').value.trim(),
-        lastname: document.getElementById('customer-lastname').value.trim(),
-        phone: document.getElementById('customer-phone').value.trim(),
-        email: document.getElementById('customer-email').value.trim(),
+        first: document.querySelector('input[name="first"]').value.trim(),
+        last: document.querySelector('input[name="last"]').value.trim(),
+        phone: document.querySelector('input[name="phone"]').value.trim(),
+        email: document.querySelector('input[name="email"]').value.trim(),
         address: document.getElementById('customer-address').value.trim(),
     };
 
@@ -186,7 +147,7 @@ export const generateOrderDetails = (cookies) => {
     };
 
     localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
-    window.location.href = 'order-summary.html';
+    window.location.href = 'order-summary.html'; // Redirect to summary page
 };
 
 // Set up the order page on load
